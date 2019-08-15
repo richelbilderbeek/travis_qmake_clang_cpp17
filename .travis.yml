@@ -1,8 +1,12 @@
 language: cpp
-dist: trusty
-sudo: required
+dist: bionic
+compiler: clang
 
 install: 
+  - sudo apt update -qq
+  # Boost
+  - sudo apt install -qq libboost-all-dev
+  # clang
   - clang++ -v
   # clang, trunk, from http://llvm.org/docs/LibFuzzer.html#id14
   - mkdir TMP_CLANG
